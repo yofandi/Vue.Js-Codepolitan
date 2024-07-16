@@ -1,47 +1,79 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from "vue";
+
+const count = ref(0);
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <main>
-    <TheWelcome />
+    <div id="app" class="container">
+      <div class="counter-box">
+        <h1>Counter</h1>
+        <div id="counter">{{ count }}</div>
+        <div class="buttons">
+          <button @click="count++">Increment</button>
+          <button @click="count--">Decrement</button>
+          <button @click="count = 0">Reset</button>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.container {
+  text-align: center;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.counter-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+#counter {
+  font-size: 4em;
+  margin-bottom: 20px;
+  color: #ff7e5f;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:nth-child(1) {
+  background: #28a745;
+  color: #fff;
+}
+
+button:nth-child(2) {
+  background: #dc3545;
+  color: #fff;
+}
+
+button:nth-child(3) {
+  background: #ffc107;
+  color: #333;
 }
 </style>
