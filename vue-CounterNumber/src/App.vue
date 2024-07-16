@@ -1,9 +1,20 @@
-<!-- component api <script setup>
+<script setup>
+// composition api
 import { ref } from "vue";
 
 const count = ref(0);
-</script> -->
-<script>
+
+function increase() {
+  count.value++;
+}
+function decrease() {
+  count.value--;
+}
+function reset() {
+  count.value = 0;
+}
+</script>
+<!-- options api<script>
 export default {
   data() {
     return {
@@ -23,7 +34,7 @@ export default {
     },
   },
 };
-</script>
+</script> -->
 
 <template>
   <main>
