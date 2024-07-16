@@ -1,0 +1,74 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.container {
+    text-align: center;
+}
+
+.counter-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+#counter {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #ff7e5f;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+button#increment {
+    background: #28a745;
+    color: #fff;
+}
+
+button#increment:hover {
+    background: #218838;
+}
+
+button#decrement {
+    background: #dc3545;
+    color: #fff;
+}
+
+button#decrement:hover {
+    background: #c82333;
+}
+
+button#reset {
+    background: #ffc107;
+    color: #333;
+}
+
+button#reset:hover {
+    background: #e0a800;
+}
