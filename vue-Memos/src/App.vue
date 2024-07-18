@@ -1,46 +1,63 @@
+<script setup>
+import { ref } from "vue";
+
+const showForm = ref(false);
+
+const newMemo = ref("");
+const memos = ref([]);
+
+function getRandomColor() {
+  return "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
+}
+
+function addMemo() {
+  memos.value.push({
+    id: Date.now(),
+    memo: newMemo.value,
+    date: new Date().toLocaleDateString(),
+    backgroundColor: getRandomColor(),
+  });
+
+  newMemo.value = "";
+  showForm.value = false;
+}
+</script>
+
 <template>
   <main>
+    {{ memos }}
     <div class="container">
       <header>
         <h1 class="header-title">Memos</h1>
-        <button class="header-button">+</button>
+        <button @click="showForm = true" class="header-button">+</button>
       </header>
       <div class="card-container">
-        <div class="card">
+        <div
+          v-for="(isian, index) in memos"
+          :key="index"
+          class="card"
+          :style="{ backgroundColor: isian.backgroundColor }"
+        >
           <p class="card-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-            excepturi neque debitis nostrum ab praesentium, quam nisi nihil
-            pariatur nemo dolor voluptate porro explicabo nesciunt ratione! Quod
-            nam beatae eaque! Mollitia consequuntur saepe officiis ipsum
-            debitis. Soluta asperiores illo sunt voluptatibus. Exercitationem,
-            numquam, voluptatum amet, totam esse iste consequuntur blanditiis
-            maiores nemo non incidunt ipsa facere veritatis perspiciatis
-            cupiditate eveniet!
+            {{ isian.memo }}
           </p>
 
-          <p class="card-date">12 Oktober 2023</p>
-        </div>
-        <div class="card">
-          <p class="card-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-            excepturi neque debitis nostrum ab praesentium, quam nisi nihil
-            pariatur nemo dolor voluptate porro explicabo nesciunt ratione! Quod
-            nam beatae eaque! Mollitia consequuntur saepe officiis ipsum
-            debitis. Soluta asperiores illo sunt voluptatibus. Exercitationem,
-            numquam, voluptatum amet, totam esse iste consequuntur blanditiis
-            maiores nemo non incidunt ipsa facere veritatis perspiciatis
-            cupiditate eveniet!
-          </p>
-
-          <p class="card-date">12 Oktober 2023</p>
+          <p class="card-date">{{ isian.date }}</p>
         </div>
       </div>
     </div>
-    <div class="form-overlay">
+    <div v-if="showForm" class="form-overlay">
       <div class="form-modal">
-        <button class="form-close-btn">x</button>
-        <textarea name="" id="memo" cols="30" rows="10" class="memo"></textarea>
-        <button class="form-save-btn">save</button>
+        <button @click="showForm = false" class="form-close-btn">x</button>
+        <textarea
+          v-model="newMemo"
+          name=""
+          id="memo"
+          cols="30"
+          rows="10"
+          class="memo"
+        ></textarea>
+        <button @click="addMemo" class="form-save-btn">save</button>
       </div>
     </div>
   </main>
