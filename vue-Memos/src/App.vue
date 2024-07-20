@@ -12,6 +12,10 @@ function getRandomColor() {
   return "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
 }
 
+function deleteMemo(id) {
+  memos.value = memos.value.filter((memo) => memo.id !== id);
+}
+
 function addMemo() {
   if (!newMemo.value) {
     errorMessage.value = "please enter your memo";
@@ -47,14 +51,18 @@ function addMemo() {
           <p class="card-content">
             {{ isian.memo }}
           </p>
-
-          <p class="card-date">{{ isian.date }}</p>
+          <div class="card-footer">
+            <p class="card-date">{{ isian.date }}</p>
+            <button @click="deleteMemo(isian.id)" class="card-btn">
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <div v-if="showForm" class="form-overlay">
       <div class="form-modal">
-      <p class="form-error" v-if="errorMessage">{{ errorMessage }}</p>
+        <p class="form-error" v-if="errorMessage">{{ errorMessage }}</p>
         <button @click="showForm = false" class="form-close-btn">x</button>
         <textarea
           v-model="newMemo"
@@ -119,6 +127,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  
 }
 
 .form-overlay {
@@ -193,7 +208,7 @@ header {
   background: #e63939; /* Slightly darker red on hover */
 }
 
-.form-error{
+.form-error {
   color: red;
 }
 </style>
