@@ -6,11 +6,17 @@ const showForm = ref(false);
 const newMemo = ref("");
 const memos = ref([]);
 
+const errorMessage = ref("");
+
 function getRandomColor() {
   return "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
 }
 
 function addMemo() {
+  if (!newMemo.value) {
+    errorMessage.value = "please enter your memo";
+    return;
+  }
   memos.value.push({
     id: Date.now(),
     memo: newMemo.value,
@@ -48,6 +54,7 @@ function addMemo() {
     </div>
     <div v-if="showForm" class="form-overlay">
       <div class="form-modal">
+      <p class="form-error" v-if="errorMessage">{{ errorMessage }}</p>
         <button @click="showForm = false" class="form-close-btn">x</button>
         <textarea
           v-model="newMemo"
@@ -184,5 +191,9 @@ header {
 
 .form-close-btn:hover {
   background: #e63939; /* Slightly darker red on hover */
+}
+
+.form-error{
+  color: red;
 }
 </style>
