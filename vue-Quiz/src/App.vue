@@ -1,20 +1,32 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import srcQuiz from "./data/quizes.json";
 
 const quizes = ref(srcQuiz);
-console.log(quizes)
+const search = ref("");
+
+watch(search, function () {
+  quizes.value = srcQuiz.filter((quiz) => {
+    return quiz.title.toLowerCase().includes(search.value.toLowerCase());
+  });
+});
 </script>
 
 <template>
   <main>
     <header>
       <h1 id="title">Vue Quiz</h1>
-      <input type="text" name="" id="search-input" placeholder="search your quiz">
+      <input
+        type="text"
+        name=""
+        id="search-input"
+        placeholder="search your quiz"
+        v-model.trim="search"
+      />
     </header>
     <section id="quiz-container">
       <div class="card" v-for="(quiz, index) in quizes" :key="quiz.id">
-        <img :src="quiz.img" :alt="quiz.title">
+        <img :src="quiz.img" :alt="quiz.title" />
         <div class="card-body">
           <h2>{{ quiz.title }}</h2>
           <p>{{ quiz.questions.length }} questions</p>
@@ -25,7 +37,7 @@ console.log(quizes)
 </template>
 
 <style scoped>
-main{
+main {
   max-width: 900px;
   margin: 0 auto;
 }
@@ -42,7 +54,7 @@ header {
   margin-right: 30px;
 }
 
-#search-input{
+#search-input {
   border: none;
   background-color: #b6b6b6bf;
   padding: 10px;
@@ -56,30 +68,27 @@ header {
 }
 
 .card {
-	width: 270px;
-	overflow: hidden;
-	border-radius: 2%;
-	box-shadow: 1px 1px 10px #00000033;
-	margin-bottom: 35px;
-	margin-right: 20px;
-	cursor: pointer;
+  width: 270px;
+  overflow: hidden;
+  border-radius: 2%;
+  box-shadow: 1px 1px 10px #00000033;
+  margin-bottom: 35px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .card img {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
-	margin: 0;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 0;
 }
 
 .card .card-body {
   padding: 0 15px;
-
 }
 
 .card h2 {
   font-weight: bold;
 }
-
-
 </style>
