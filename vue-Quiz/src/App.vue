@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from "vue";
+import srcQuiz from "./data/quizes.json";
+
+const quizes = ref(srcQuiz);
+console.log(quizes)
+</script>
+
 <template>
   <main>
     <header>
@@ -5,11 +13,11 @@
       <input type="text" name="" id="search-input" placeholder="search your quiz">
     </header>
     <section id="quiz-container">
-      <div class="card">
-        <img src="https://www.dewaweb.com/blog/wp-content/uploads/2023/12/dewaweb-blog-header-ketahui-apa-itu-coding-2-copy.webp" alt="">
+      <div class="card" v-for="(quiz, index) in quizes" :key="quiz.id">
+        <img :src="quiz.img" :alt="quiz.title">
         <div class="card-body">
-          <h2>Programing</h2>
-          <p>2 questions</p>
+          <h2>{{ quiz.title }}</h2>
+          <p>{{ quiz.questions.length }} questions</p>
         </div>
       </div>
     </section>
