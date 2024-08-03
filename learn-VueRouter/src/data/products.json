@@ -1,6 +1,6 @@
 [
     { "id": 1, "name": "Laptop Dell XPS 13", "price": 999.99, "year": 2023 },
-    { "id": 2, "name": "MacBook Pro 16\"", "price": 2399.99, "year": 2023 },
+    { "id": 2, "name": "MacBook Pro 16", "price": 2399.99, "year": 2023 },
     { "id": 3, "name": "Asus ROG Strix", "price": 1799.99, "year": 2023 },
     { "id": 4, "name": "HP Spectre x360", "price": 1399.99, "year": 2023 },
     { "id": 5, "name": "Lenovo ThinkPad X1 Carbon", "price": 1499.99, "year": 2023 },
