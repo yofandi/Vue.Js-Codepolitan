@@ -13,10 +13,22 @@ const router = createRouter({
       name: "about",
       component: () => import("../views/About.vue"),
     },
+    // {
+    //   path: "/products/:id",
+    //   name: "products",
+    //   component: () => import("../views/products.vue"),
+    // },
     {
       path: "/products/:id",
       name: "products",
       component: () => import("../views/products.vue"),
+      children: [
+        {
+          path: "owner",
+          name: "owner",
+          component: import("../views/owner.vue")
+        }
+      ]
     },
   ],
 });

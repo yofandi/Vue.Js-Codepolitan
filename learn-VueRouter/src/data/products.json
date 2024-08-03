@@ -1,27 +1,253 @@
 [
-    { "id": 1, "name": "Laptop Dell XPS 13", "price": 999.99, "year": 2023 },
-    { "id": 2, "name": "MacBook Pro 16", "price": 2399.99, "year": 2023 },
-    { "id": 3, "name": "Asus ROG Strix", "price": 1799.99, "year": 2023 },
-    { "id": 4, "name": "HP Spectre x360", "price": 1399.99, "year": 2023 },
-    { "id": 5, "name": "Lenovo ThinkPad X1 Carbon", "price": 1499.99, "year": 2023 },
-    { "id": 6, "name": "Acer Predator Helios 300", "price": 1299.99, "year": 2023 },
-    { "id": 7, "name": "MSI GS66 Stealth", "price": 1599.99, "year": 2023 },
-    { "id": 8, "name": "Razer Blade 15", "price": 1999.99, "year": 2023 },
-    { "id": 9, "name": "Microsoft Surface Laptop 4", "price": 999.99, "year": 2023 },
-    { "id": 10, "name": "Apple iMac 24\"", "price": 1299.99, "year": 2023 },
-    { "id": 11, "name": "Alienware Aurora R10", "price": 1799.99, "year": 2023 },
-    { "id": 12, "name": "CyberPowerPC Gamer Xtreme", "price": 1099.99, "year": 2023 },
-    { "id": 13, "name": "Dell G5 Gaming Desktop", "price": 999.99, "year": 2023 },
-    { "id": 14, "name": "HP Omen 30L", "price": 1499.99, "year": 2023 },
-    { "id": 15, "name": "Lenovo Legion Tower 5i", "price": 1299.99, "year": 2023 },
-    { "id": 16, "name": "iBUYPOWER Pro Gaming PC", "price": 1499.99, "year": 2023 },
-    { "id": 17, "name": "Corsair Vengeance i7200", "price": 2199.99, "year": 2023 },
-    { "id": 18, "name": "ASUS ZenBook Duo 14", "price": 1299.99, "year": 2023 },
-    { "id": 19, "name": "Gigabyte AERO 15", "price": 1799.99, "year": 2023 },
-    { "id": 20, "name": "Samsung Galaxy Book Pro", "price": 999.99, "year": 2023 },
-    { "id": 21, "name": "LG Gram 17\"", "price": 1499.99, "year": 2023 },
-    { "id": 22, "name": "Acer Swift 3", "price": 799.99, "year": 2023 },
-    { "id": 23, "name": "Dell Inspiron 15", "price": 699.99, "year": 2023 },
-    { "id": 24, "name": "HP Pavilion x360", "price": 849.99, "year": 2023 },
-    { "id": 25, "name": "Lenovo Yoga C940", "price": 1399.99, "year": 2023 }
-]
+    {
+      "id": 1,
+      "name": "Laptop XPS 13",
+      "price": 1000,
+      "year": 2020,
+      "owner": {
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      }
+    },
+    {
+      "id": 2,
+      "name": "MacBook Pro",
+      "price": 2000,
+      "year": 2021,
+      "owner": {
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Gaming PC",
+      "price": 1500,
+      "year": 2019,
+      "owner": {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Chromebook",
+      "price": 500,
+      "year": 2021,
+      "owner": {
+        "name": "Bob Brown",
+        "email": "bob.brown@example.com"
+      }
+    },
+    {
+      "id": 5,
+      "name": "iMac",
+      "price": 1800,
+      "year": 2020,
+      "owner": {
+        "name": "Charlie Davis",
+        "email": "charlie.davis@example.com"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Surface Laptop",
+      "price": 1200,
+      "year": 2022,
+      "owner": {
+        "name": "Dana White",
+        "email": "dana.white@example.com"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Alienware Desktop",
+      "price": 2200,
+      "year": 2019,
+      "owner": {
+        "name": "Eve Martinez",
+        "email": "eve.martinez@example.com"
+      }
+    },
+    {
+      "id": 8,
+      "name": "ThinkPad X1",
+      "price": 1400,
+      "year": 2021,
+      "owner": {
+        "name": "Frank Thompson",
+        "email": "frank.thompson@example.com"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Razer Blade",
+      "price": 2100,
+      "year": 2020,
+      "owner": {
+        "name": "Grace Wilson",
+        "email": "grace.wilson@example.com"
+      }
+    },
+    {
+      "id": 10,
+      "name": "HP Spectre",
+      "price": 1300,
+      "year": 2021,
+      "owner": {
+        "name": "Hank Lee",
+        "email": "hank.lee@example.com"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Acer Predator",
+      "price": 1600,
+      "year": 2020,
+      "owner": {
+        "name": "Ivy King",
+        "email": "ivy.king@example.com"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Asus ROG",
+      "price": 1700,
+      "year": 2019,
+      "owner": {
+        "name": "Jack Young",
+        "email": "jack.young@example.com"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Dell Inspiron",
+      "price": 900,
+      "year": 2021,
+      "owner": {
+        "name": "Karen Hill",
+        "email": "karen.hill@example.com"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Lenovo Yoga",
+      "price": 1100,
+      "year": 2020,
+      "owner": {
+        "name": "Larry Green",
+        "email": "larry.green@example.com"
+      }
+    },
+    {
+      "id": 15,
+      "name": "MSI Stealth",
+      "price": 1900,
+      "year": 2019,
+      "owner": {
+        "name": "Mona Adams",
+        "email": "mona.adams@example.com"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Samsung Galaxy Book",
+      "price": 1000,
+      "year": 2021,
+      "owner": {
+        "name": "Nick Roberts",
+        "email": "nick.roberts@example.com"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Google Pixelbook",
+      "price": 1200,
+      "year": 2020,
+      "owner": {
+        "name": "Olivia Clark",
+        "email": "olivia.clark@example.com"
+      }
+    },
+    {
+      "id": 18,
+      "name": "HP Envy",
+      "price": 1100,
+      "year": 2022,
+      "owner": {
+        "name": "Paul Walker",
+        "email": "paul.walker@example.com"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Sony VAIO",
+      "price": 1300,
+      "year": 2019,
+      "owner": {
+        "name": "Quincy Wright",
+        "email": "quincy.wright@example.com"
+      }
+    },
+    {
+      "id": 20,
+      "name": "LG Gram",
+      "price": 1400,
+      "year": 2021,
+      "owner": {
+        "name": "Rachel Hall",
+        "email": "rachel.hall@example.com"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Huawei MateBook",
+      "price": 1100,
+      "year": 2020,
+      "owner": {
+        "name": "Sam Lewis",
+        "email": "sam.lewis@example.com"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Toshiba Dynabook",
+      "price": 900,
+      "year": 2021,
+      "owner": {
+        "name": "Tina Allen",
+        "email": "tina.allen@example.com"
+      }
+    },
+    {
+      "id": 23,
+      "name": "Apple Mac Mini",
+      "price": 800,
+      "year": 2022,
+      "owner": {
+        "name": "Uma Scott",
+        "email": "uma.scott@example.com"
+      }
+    },
+    {
+      "id": 24,
+      "name": "Acer Swift",
+      "price": 1000,
+      "year": 2019,
+      "owner": {
+        "name": "Victor Harris",
+        "email": "victor.harris@example.com"
+      }
+    },
+    {
+      "id": 25,
+      "name": "Dell XPS 15",
+      "price": 2000,
+      "year": 2021,
+      "owner": {
+        "name": "Wendy Baker",
+        "email": "wendy.baker@example.com"
+      }
+    }
+  ]
+  
