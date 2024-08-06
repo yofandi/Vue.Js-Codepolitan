@@ -26,9 +26,14 @@ const router = createRouter({
         {
           path: "owner",
           name: "owner",
-          component: import("../views/owner.vue")
-        }
-      ]
+          component: import("../views/owner.vue"),
+        },
+      ],
+    },
+    {
+      path: "/:catchall(.*)*",
+      name: "404",
+      component: import("../views/errors/404.vue"),
     },
   ],
 });

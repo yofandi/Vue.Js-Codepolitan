@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div v-if="product">
     <h1>Product</h1>
     <h2>{{ product.name }} - {{ product.price }}</h2>
     <p>Year: {{ product.year }}</p>
+  </div>
+  <div v-else>
+    <h1>product not found</h1>
   </div>
   <button @click="showOwner">Show Owner</button>
   <RouterView />
