@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <h1>Quiz Page</h1>
-  </div>
+  <quizHeader></quizHeader>
+  <quizContent></quizContent>
+  
 </template>
 
 <script setup>
+import quizHeader from "@/components/quizHeader.vue";
+import quizContent from "@/components/quizContent.vue";
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+</style>
