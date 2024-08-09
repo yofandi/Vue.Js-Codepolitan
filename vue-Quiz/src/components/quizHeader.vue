@@ -1,13 +1,17 @@
 <template>
   <header>
-    <h4>Question 1/2</h4>
+    <h4>Question {{ questionPage }}</h4>
     <div class="bar">
       <div class="bar-progress"></div>
     </div>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineProps } from "vue";
+
+const { questionPage } = defineProps(["questionPage"]);
+</script>
 
 <style scoped>
 header {
