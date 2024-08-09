@@ -26,7 +26,7 @@ watch(search, function () {
       />
     </header>
     <section id="quiz-container">
-      <QuizCardVue v-for="(quiz, index) in quizes" :key="quiz.id" v-bind:quiz="quiz" />
+      <QuizCardVue v-for="(quiz) in quizes" :key="quiz.id" v-bind:quiz="quiz" />
     </section>
 </template>
 
