@@ -1,5 +1,8 @@
 <template>
-  <quizHeader :questionPage="questionPage"></quizHeader>
+  <quizHeader
+    :questionPage="questionPage"
+    :barPercentage="barPercentage"
+  ></quizHeader>
   <quizContent :question="quiz.questions[currentQuestionIndex]"></quizContent>
   <button
     @click="currentQuestionIndex++"
@@ -25,6 +28,9 @@ const questionPage = computed(() => {
   return `${currentQuestionIndex.value + 1} / ${quiz.questions.length}`;
 });
 
+const barPercentage = computed(() => {
+  return `${((currentQuestionIndex.value + 1) / quiz.questions.length) * 100}%`;
+});
 // const questionPage = ref(
 //   `${currentQuestionIndex.value + 1} / ${quiz.questions.length}`
 // );
